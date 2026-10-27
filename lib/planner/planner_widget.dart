@@ -2,28 +2,28 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'home_page_model.dart';
-export 'home_page_model.dart';
+import 'planner_model.dart';
+export 'planner_model.dart';
 
-class HomePageWidget extends StatefulWidget {
-  const HomePageWidget({super.key});
+class PlannerWidget extends StatefulWidget {
+  const PlannerWidget({super.key});
 
-  static String routeName = 'HomePage';
-  static String routePath = '/homePage';
+  static String routeName = 'Planner';
+  static String routePath = '/planner';
 
   @override
-  State<HomePageWidget> createState() => _HomePageWidgetState();
+  State<PlannerWidget> createState() => _PlannerWidgetState();
 }
 
-class _HomePageWidgetState extends State<HomePageWidget> {
-  late HomePageModel _model;
+class _PlannerWidgetState extends State<PlannerWidget> {
+  late PlannerModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => HomePageModel());
+    _model = createModel(context, () => PlannerModel());
   }
 
   @override
@@ -49,7 +49,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           title: Text(
             'Page Title',
             style: FlutterFlowTheme.of(context).headlineMedium.override(
-                  font: GoogleFonts.interTight(
+                  font: GoogleFonts.inter(
                     fontWeight:
                         FlutterFlowTheme.of(context).headlineMedium.fontWeight,
                     fontStyle:

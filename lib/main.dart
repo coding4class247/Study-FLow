@@ -2,9 +2,13 @@ import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_web_plugins/url_strategy.dart';
+import 'auth/firebase_auth/firebase_user_provider.dart';
+import 'auth/firebase_auth/auth_util.dart';
+
 import 'backend/firebase/firebase_config.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import 'flutter_flow/flutter_flow_util.dart';
+import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -45,12 +49,32 @@ class _MyAppState extends State<MyApp> {
       _router.routerDelegate.currentConfiguration.matches
           .map((e) => getRoute(e))
           .toList();
+  late Stream<BaseAuthUser> userStream;
+
+  final authUserSub = authenticatedUserStream.listen((_) {});
+
   @override
   void initState() {
     super.initState();
 
     _appStateNotifier = AppStateNotifier.instance;
     _router = createRouter(_appStateNotifier);
+    userStream = studyFlowFirebaseUserStream()
+      ..listen((user) {
+        _appStateNotifier.update(user);
+      });
+    jwtTokenStream.listen((_) {});
+    Future.delayed(
+      Duration(milliseconds: 1000),
+      () => _appStateNotifier.stopShowingSplashImage(),
+    );
+  }
+
+  @override
+  void dispose() {
+    authUserSub.cancel();
+
+    super.dispose();
   }
 
   void setThemeMode(ThemeMode mode) => safeSetState(() {
@@ -79,6 +103,89 @@ class _MyAppState extends State<MyApp> {
       ),
       themeMode: _themeMode,
       routerConfig: _router,
+    );
+  }
+}
+
+class NavBarPage extends StatefulWidget {
+  NavBarPage({
+    Key? key,
+    this.initialPage,
+    this.page,
+    this.disableResizeToAvoidBottomInset = false,
+  }) : super(key: key);
+
+  final String? initialPage;
+  final Widget? page;
+  final bool disableResizeToAvoidBottomInset;
+
+  @override
+  _NavBarPageState createState() => _NavBarPageState();
+}
+
+/// This is the private State class that goes with NavBarPage.
+class _NavBarPageState extends State<NavBarPage> {
+  String _currentPageName = 'Courses';
+  late Widget? _currentPage;
+
+  @override
+  void initState() {
+    super.initState();
+    _currentPageName = widget.initialPage ?? _currentPageName;
+    _currentPage = widget.page;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final tabs = {
+      'Tasks': TasksWidget(),
+      'Setting': SettingWidget(),
+      'Courses': CoursesWidget(),
+    };
+    final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
+
+    return Scaffold(
+      resizeToAvoidBottomInset: !widget.disableResizeToAvoidBottomInset,
+      body: _currentPage ?? tabs[_currentPageName],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: currentIndex,
+        onTap: (i) => safeSetState(() {
+          _currentPage = null;
+          _currentPageName = tabs.keys.toList()[i];
+        }),
+        backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
+        selectedItemColor: FlutterFlowTheme.of(context).primary,
+        unselectedItemColor: FlutterFlowTheme.of(context).secondaryText,
+        showSelectedLabels: true,
+        showUnselectedLabels: true,
+        type: BottomNavigationBarType.fixed,
+        items: <BottomNavigationBarItem>[
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.home,
+              size: 24.0,
+            ),
+            label: 'Home',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.settings_sharp,
+              size: 24.0,
+            ),
+            label: 'Settings',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.menu_book,
+              size: 24.0,
+            ),
+            label: 'Courses',
+            tooltip: '',
+          )
+        ],
+      ),
     );
   }
 }
