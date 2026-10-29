@@ -59,6 +59,9 @@ So that we can measure user retention, identify engagement patterns, and determi
 Acceptance Criteria:
 the system tracks how many registered users open and interact with the application at least once per week.
 The system tracks the number of Pomodoro timer sessions started and completed by each user.
+The system records how many tasks users complete each week.
+The system tracks when users manually add new tasks or upload additional academic materials.
+Retention metrics are stored and made accessible through the analytics dashboard.
 
 
 
@@ -96,8 +99,3 @@ All metrics from Tasks 1–3 populate correctly on the shared team dashboard.
 Database queries for these metrics are optimized and do not impact app load times.
 
 
-
-
-The system records how many tasks users complete each week.
-The system tracks when users manually add new tasks or upload additional academic materials.
-Retention metrics are stored and made accessible through the analytics dashboard.
