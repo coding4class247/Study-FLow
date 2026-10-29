@@ -13,17 +13,16 @@ In-app prompts for app store ratings display at optimal satisfaction moments.
 Referral/sponsor program events (invites sent, conversions) are tracked in telemetry.
 Data is logged to the analytics dashboard without degrading app performance.
 
-PBI TASK CARDS (SPRINT 2)Task 1: In-App Targeted Survey Engine
-
-Title: [Metrics] Implement targeted random user survey trigger & CSAT scoring
-Labels: metrics
+Alexander Bressan, Metric Card Title: Track workflow engagement: 
+Label: Engagement Metris
 Sprint: Sprint 2
-Assignee: [Team Member 1]
-Description: Implement a randomized pop-up survey mechanism after a user completes the Golden Path to capture 1–5 star ratings and CSAT scores.
-Acceptance Criteria:
-Triggers for ~10–20% of users upon finishing a Golden Path task.
-Captures numeric rating (CSAT) and optional qualitative feedback.
-Sends event payload to the analytics database.   
+Assignee: Alexander Bressan
+Description: Collect and measure the interactions and engagement of the user by tracking use of scheduling tools, study/focus timers, and task completion.
+Accepted Criteria: 
+Track schedule setup and refinements
+Track timer start, completion/cancelations, and task completion checks.
+Measure engagement with study times and tool usage
+   
 
 Task 2: App Store / Platform Rating Prompt
 
