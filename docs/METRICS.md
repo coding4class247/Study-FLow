@@ -29,7 +29,7 @@ Task 2: App Store / Platform Rating Prompt
 Title: [Metrics] Integrate App Store rating prompt & platform feedback tracking
 Labels: metrics
 Sprint: Sprint 2
-Assignee: [Team Member 2]
+Assignee: Samuel Babbidge
 Description: Add native App Store / Play Store rating prompts for highly engaged users.
 Acceptance Criteria:
 Prompt appears after successful completion of the Golden Path (not on error/drop-off).
