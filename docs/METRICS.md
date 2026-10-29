@@ -59,6 +59,45 @@ So that we can measure user retention, identify engagement patterns, and determi
 Acceptance Criteria:
 the system tracks how many registered users open and interact with the application at least once per week.
 The system tracks the number of Pomodoro timer sessions started and completed by each user.
+
+
+
+
+-------------------------------------------------------------- Done by Gabriella Souder 
+
+Gabriella Souder - Task Success
+Title: [Metrics(task success)] Collect Task Success Data across Intake & Study Workflows Labels: metrics Sprint: Sprint 2 Description: As a Product Manager, I want to collect telemetry on syllabus uploads and task completion behaviors, So that we can measure if the app works as designed, verify students are successfully using the app to study, and track proxies for improved academic performance. Acceptance Criteria:
+
+Event tracking logs the initiation, abortion, and successful completion of the syllabus capture/upload flow.
+Task state changes (checked off/completed) are logged with timestamps compared against their stated deadlines.
+Data is aggregated to calculate the ratio of on-time versus past-due tasks.
+Data is logged to the analytics dashboard without degrading app performance.
+
+PBI TASK CARDS (SPRINT 2)
+
+Task 1: Capture/Upload (OCR) Flow TrackingTitle: [Metrics] Implement telemetry for syllabus capture and upload completion rate Labels: metrics Sprint: Sprint 2 Assignee: [Team Member 1] Description: Set up event logging to track when users initiate the syllabus capture/upload flow and measure the percentage of users who successfully have tasks generated without manually aborting the process.Acceptance Criteria:
+
+Tracks intake_started, intake_aborted, and intake_successful events.
+Calculates the completion percentage (successful vs. aborted) in the analytics dashboard.
+
+Task 2: Priority Queue Deadline TrackingTitle: [Metrics] Track task completion percentage prior to deadline Labels: metrics Sprint: Sprint 2 Assignee: [Team Member 2] Description: Implement tracking for tasks generated in the priority queue to measure the exact percentage of tasks checked off as completed before their assigned deadline.Acceptance Criteria:
+
+Logs task completion events alongside the respective task's due date.
+Calculates the overall percentage of tasks completed on time across the active user base.
+
+Task 3: Academic Proxy Ratio AnalyticsTitle: [Metrics] Calculate on-time vs. past-due task ratio Labels: metrics Sprint: Sprint 2 Assignee: [Team Member 3] Description: Aggregate the task completion telemetry to generate a rolling ratio of tasks completed before the due date versus tasks completed past the due date, serving as a quantifiable proxy for improved academic performance.Acceptance Criteria:
+
+Dashboard logic calculates and displays the on-time vs. past-due ratio.
+Properly categorizes and filters out tasks that are deleted rather than completed.
+
+Task 4: Analytics Dashboard IntegrationTitle: [Metrics] Integrate Task Success metrics into primary backend dashboard Labels: metrics Sprint: Sprint 2 Assignee: [Team Member 4] Description: Connect the telemetry endpoints from the capture flow and priority queue to the main product analytics dashboard so the team can monitor Task Success health in real time.Acceptance Criteria:
+
+All metrics from Tasks 1–3 populate correctly on the shared team dashboard.
+Database queries for these metrics are optimized and do not impact app load times.
+
+
+
+
 The system records how many tasks users complete each week.
 The system tracks when users manually add new tasks or upload additional academic materials.
 Retention metrics are stored and made accessible through the analytics dashboard.
