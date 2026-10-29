@@ -48,12 +48,18 @@ Tracks referral_link_generated, invite_sent, and referral_signed_up.
 Calculates NPS / Referral Rate metric in the analytics dashboard.   
 
 Task 4: Recurring User & Retention Happiness Telemetry
-
-Title: [Metrics] Implement telemetry for recurring user satisfaction & sign-in frequency
+Title: [Metrics (retention] Implement telemetry for recurring user satisfaction & sign-in frequency
 Labels: metrics
 Sprint: Sprint 2
-Assignee: [Team Member 4]
-Description: Track repeat sign-ins (Sprint 1 functionality) against post-Golden Path satisfaction scores to correlate user retention with happiness.
+Assignee: [Enmanuel Morillo]
+Description: 
+As a Product Manager,
+I want to track how frequently students return to the application, complete study sessions, use Pomodoro timers, and manage their academic tasks,
+So that we can measure user retention, identify engagement patterns, and determine whether students consistently use the app throughout the semester.
+
 Acceptance Criteria:
-Logs returning user sessions and ties CSAT/NPS scores to user activity frequency.
-Displays metrics on the backend dashboard for team review.
+the system tracks how many registered users open and interact with the application at least once per week.
+The system tracks the number of Pomodoro timer sessions started and completed by each user.
+The system records how many tasks users complete each week.
+The system tracks when users manually add new tasks or upload additional academic materials.
+Retention metrics are stored and made accessible through the analytics dashboard.
