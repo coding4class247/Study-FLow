@@ -29,7 +29,7 @@ Task 2: App Store / Platform Rating Prompt
 Title: [Metrics] Integrate App Store rating prompt & platform feedback tracking
 Labels: metrics
 Sprint: Sprint 2
-Assignee: Samuel Babbidge
+Assignee: [Team Member 2]
 Description: Add native App Store / Play Store rating prompts for highly engaged users.
 Acceptance Criteria:
 Prompt appears after successful completion of the Golden Path (not on error/drop-off).
@@ -97,5 +97,18 @@ Task 4: Analytics Dashboard IntegrationTitle: [Metrics] Integrate Task Success m
 
 All metrics from Tasks 1–3 populate correctly on the shared team dashboard.
 Database queries for these metrics are optimized and do not impact app load times.
+
+---------------------------------------Samuel Babbidge
+
+Title: [Metrics (Adoption)] Implement telemetry to keep track of downloads, registration and feature use
+Labels: metrics
+Sprint: Sprint 2
+Assignee: [Samuel Babbidge]
+Description: 
+As a Software Engineer,
+I want to track the rate at which people download, sign up and use the features of the application. This will primarily 
+be done for opening the app, signing in and creating a course. It will utilize firebase analytics such as app_open, login,
+sign_up, create_course.
+
 
 
