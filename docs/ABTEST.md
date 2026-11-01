@@ -159,5 +159,26 @@ If Variant B achieves the target increase in 7-day retention, shows a statistica
 
 If the results are inconclusive or show negative engagement trends, the team should maintain the standard dashboard and consider testing different reminder frequencies or notification timing.
 
+--------------------------------Samuel Babbidge
+A/B Test Name: Course Creation Screen - Single "Create" Button vs. Immediate Form Fields
+User Story Number: US4 (Golden Path/Course Creation )
+Metrics:
+HEART Metric Category: Adoption & Engagement
+Primary Metric: Adoption Rate (Feature Activation) — The conversion rate from an application open (app_open) or user login (login) to a completed course creation (create_course).
+Secondary Metric: Retention (Early Feature Engagement) — The rate of recurring create_course event logs by the same user ID within their first 7 days.
+Hypothesis:
+Problem: We have yet to know how many people using the app interact with its main feature. While users are successfully completing sign_up and logging app_open,  how many proceed to trigger create_course? Is it intuitive for users to create a course or do they give up before they get there?
+Hypothesis: By changing the empty state dashboard screen from an abstract "+" icon to an immediate, prominent "Create Your First Course" interactive form block, we will eliminate onboarding ambiguity. Changing this single layout element will guide users to their primary action faster, increasing the activation rate of the create_course event.
+Experiment:
+Firebase Remote Config Setup: We will configure a Remote Config parameter named dashboard_empty_state_variant to dynamically split user experiences.
+Audience: 100% of newly registered users (sign_up event triggers for the first time) will be funneled into this experiment for their first 48 hours. We are allocating all new users because empty-state bottlenecks represent a high-loss drop-off point where users abandon the app entirely; accelerating data collection here ensures we fix the user adoption friction quickly. The sample will be evenly split (50% Control, 50% Variant A).
+Firebase Analytics Tracking: We will track user progression through the funnel by auditing the exact sequences of the following events:
+app_open and login (to track active user baselines)
+sign_up (to trigger inclusion in the new-user cohort)
+create_course (the definitive conversion success metric)
+Variations:
+Control: The user lands on the courses page without any courses in it.
+Testing: Instead of landing on the courses page, a new user is prompted immediately to add a course via a pop up menu.
+
 
 
