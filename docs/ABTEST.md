@@ -43,7 +43,7 @@
 
 **A/B Test Name:** Smart Priority Queue Engagement (Standard Dashboard vs. Personalized Study Reminders)
 
-**User Story Number:** Retention – US2 / Task 1 (Weekly Active User Tracking)
+**User Story Number:** US4 (Golden Path) – Retention task: Weekly Active User Tracking
 
 ## Metrics (HEART Framework)
 
