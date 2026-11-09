@@ -110,5 +110,6 @@ I want to track the rate at which people download, sign up and use the features 
 be done for opening the app, signing in and creating a course. It will utilize firebase analytics such as app_open, login,
 sign_up, create_course.
 
+## How We Collect Each Metric
 
-
+- **Retention** – Firebase Analytics automatically logs `first_open`, `session_start` and `user_engagement`; the Firebase Retention cohort report gives Day 1 / Day 7 / Day 30 return rates. We also add an On Page Load action in FlutterFlow on the home page that writes a `lastActiveAt` timestamp to the user's Firestore document, so we can count weekly returning users and how many weeks in a row each student comes back.
