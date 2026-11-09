@@ -66,7 +66,7 @@ Retention metrics are stored and made accessible through the analytics dashboard
 
 
 
--------------------------------------------------------------- Done by Gabriella Souder 
+------------------------------------------------------------- Done by Gabriella Souder 
 
 Gabriella Souder - Task Success
 Title: [Metrics(task success)] Collect Task Success Data across Intake & Study Workflows Labels: metrics Sprint: Sprint 2 Description: As a Product Manager, I want to collect telemetry on syllabus uploads and task completion behaviors, So that we can measure if the app works as designed, verify students are successfully using the app to study, and track proxies for improved academic performance. Acceptance Criteria:
